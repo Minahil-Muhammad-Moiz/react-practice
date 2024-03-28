@@ -8,13 +8,6 @@ function App() {
   const [name, setName] = useState('')
   const [showText, setShowText] = useState(true)
 
-  const increaseCount = ()=>{
-    setCount(count+1)
-  }
-
-  const newName = (event)=>{
-    setName(event.target.value)
-  }
   return (
     <>
     <div>
@@ -28,11 +21,12 @@ function App() {
       <h1>Basic Counter</h1>
       <h1>{count}</h1>
       <br/>
-      <button onClick={increaseCount}>Count</button>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <button onClick={()=>setCount(count-1)}>Decrement</button>
       <button onClick={()=> setCount(0)}>Reset</button>
     </div>
     <div className='uCard'>
-      <input type='text' onChange={newName}/>
+      <input type='text' onChange={(eve)=>setName(eve.target.value)}/>
       <h1>{name}</h1>
     </div>
     <div className='uCard'>
