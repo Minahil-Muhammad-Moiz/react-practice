@@ -6,6 +6,7 @@ import { useState } from 'react'
 function App() {
   const [count, setCount] = useState(0)
   const [name, setName] = useState('')
+  const [showText, setShowText] = useState(true)
 
   const increaseCount = ()=>{
     setCount(count+1)
@@ -30,9 +31,13 @@ function App() {
       <button onClick={increaseCount}>Count</button>
       <button onClick={()=> setCount(0)}>Reset</button>
     </div>
-    <div>
+    <div className='uCard'>
       <input type='text' onChange={newName}/>
-      <h1>{name}</h1>   
+      <h1>{name}</h1>
+    </div>
+    <div className='uCard'>
+      <button onClick={()=>setShowText(!showText)}>Show/Hide</button>
+      {showText && <h1>This was the hidden text</h1>}
     </div>
     </>
   )
