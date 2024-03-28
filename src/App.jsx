@@ -5,9 +5,14 @@ import { useState } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [name, setName] = useState('')
 
   const increaseCount = ()=>{
     setCount(count+1)
+  }
+
+  const newName = (event)=>{
+    setName(event.target.value)
   }
   return (
     <>
@@ -24,6 +29,10 @@ function App() {
       <br/>
       <button onClick={increaseCount}>Count</button>
       <button onClick={()=> setCount(0)}>Reset</button>
+    </div>
+    <div>
+      <input type='text' onChange={newName}/>
+      <h1>{name}</h1>   
     </div>
     </>
   )
