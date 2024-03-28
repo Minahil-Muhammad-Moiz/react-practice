@@ -12,3 +12,12 @@
   padding: 1.25rem;
   border-radius: .5rem;
 }
+
+button{
+  padding: 0.2rem;
+  font-size: 1.2rem;
+  color: slategray;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
