@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 const ToDoList = () => {
+    const [newTask, setNewTask] = useState('');
   return (
     <>
         <h1>To Do List</h1>

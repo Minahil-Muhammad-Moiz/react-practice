@@ -1,5 +1,6 @@
 import './App.css'
 import Planets from './Components/Planets'
+import ToDoList from './Components/ToDoList'
 import User from './Components/User'
 import { useState } from 'react'
 
@@ -32,6 +33,9 @@ function App() {
     <div className='uCard'>
       <button onClick={()=>setShowText(!showText)}>Show/Hide</button>
       {showText && <h1>This was the hidden text</h1>}
+    </div>
+    <div className='uCard'>
+      <ToDoList/>
     </div>
     </>
   )
