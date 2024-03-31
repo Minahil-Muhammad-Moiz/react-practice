@@ -8,11 +8,22 @@ const ToDoList = () => {
     const  addItem = () =>{
         const task = {
             id: TodoList.length === 0 ? 1: TodoList[TodoList.length-1].id +1,
-            taskName: newTask
+            taskName: newTask,
+            completed: false
           }
         setTodoList([...TodoList, task]);
       }
     
+    const completeTask = (id)=>{
+      setTodoList(TodoList.map((task)=>{
+        if (task.id === id){
+          return {...task, completed: true}
+        }else{
+          return task
+        }
+      }))
+    }
+
       const deleteTask= (id)=>{
       setTodoList(TodoList.filter((task)=> task.id !== id))
     }
@@ -29,6 +40,8 @@ const ToDoList = () => {
               <Task 
                 taskName = {task.taskName}
                 id = {task.id}
+                completed = {task.completed}
+                completeTask ={completeTask}
                 deleteTask= {deleteTask}/>
             )
           })}
