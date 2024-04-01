@@ -1,4 +1,5 @@
 import './App.css'
+import Excuse from './Components/Excuse'
 import Planets from './Components/Planets'
 import ToDoList from './Components/ToDoList'
 import User from './Components/User'
@@ -11,11 +12,11 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className='uCard'>
       <User name='Minail' age={21} email='min@gmail.com'/>
       <User name='Mustafa' age={17} email= 'mus@gmail.com'/>
     </div>
-    <div>
+    <div className='uCard'>
       {Planets.map((planet, key)=> !planet.isGasPlanet && <h1>{planet.name}</h1>)}
     </div>
     <div className='uCard'>
@@ -35,7 +36,10 @@ function App() {
       {showText && <h1>This was the hidden text</h1>}
     </div>
     <div className='uCard'>
-      <ToDoList/>
+      <ToDoList />
+    </div>
+    <div className='uCard'>
+      <Excuse/>
     </div>
     </>
   )
