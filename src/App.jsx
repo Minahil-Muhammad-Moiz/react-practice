@@ -1,4 +1,5 @@
 import './App.css'
+import Counter from './Components/Counter'
 import Excuse from './Components/Excuse'
 import Planets from './Components/Planets'
 import ToDoList from './Components/ToDoList'
@@ -6,7 +7,6 @@ import User from './Components/User'
 import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [name, setName] = useState('')
   const [showText, setShowText] = useState(true)
 
@@ -20,12 +20,7 @@ function App() {
       {Planets.map((planet, key)=> !planet.isGasPlanet && <h1>{planet.name}</h1>)}
     </div>
     <div className='uCard'>
-      <h1>Basic Counter</h1>
-      <h1>{count}</h1>
-      <br/>
-      <button onClick={()=>setCount(count+1)}>Increment</button>
-      <button onClick={()=>setCount(count-1)}>Decrement</button>
-      <button onClick={()=> setCount(0)}>Reset</button>
+      <Counter />
     </div>
     <div className='uCard'>
       <input type='text' onChange={(eve)=>setName(eve.target.value)}/>
