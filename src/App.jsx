@@ -1,15 +1,12 @@
 import './App.css'
 import Counter from './Components/Counter'
 import Excuse from './Components/Excuse'
-import Planets from './Components/Planets'
+import ShowHide from './Components/ShowHide'
 import ToDoList from './Components/ToDoList'
 import User from './Components/User'
-import { useState } from 'react'
+import Planets from './Components/Planets'
 
 function App() {
-  const [name, setName] = useState('')
-  const [showText, setShowText] = useState(true)
-
   return (
     <>
     <div className='uCard'>
@@ -17,18 +14,13 @@ function App() {
       <User name='Mustafa' age={17} email= 'mus@gmail.com'/>
     </div>
     <div className='uCard'>
-      {Planets.map((planet, key)=> !planet.isGasPlanet && <h1>{planet.name}</h1>)}
+      <Planets />
     </div>
     <div className='uCard'>
       <Counter />
     </div>
     <div className='uCard'>
-      <input type='text' onChange={(eve)=>setName(eve.target.value)}/>
-      <h1>{name}</h1>
-    </div>
-    <div className='uCard'>
-      <button onClick={()=>setShowText(!showText)}>Show/Hide</button>
-      {showText && <h1>This was the hidden text</h1>}
+      <ShowHide/>
     </div>
     <div className='uCard'>
       <ToDoList />
