@@ -1,18 +1,39 @@
+import { createContext } from "react"
 import { useState } from "react"
+import User from "./User"
+
+export const UserContext = createContext()
 
 const ShowHide = () => {
     const [show, setShow] = useState(false)
-    const [text, setText] = useState('')
+    const [name, setName] = useState('')
+    const [age, setAge] = useState()
+    const [email, setEmail] = useState('')
+    const [userCard, setUserCard] = useState(false)
+
+    const reset =()=>{
+      setName('');
+      setAge();
+      setEmail('');
+      setUserCard(false)
+    }
 
   return (
     <div>
-        <button onClick={()=>{setShow(!show)}}>Show / Hide</button>
+      <UserContext.Provider value={{ name, age, email }} >
+        <button onClick={()=>{setShow(!show)}}>Make User Card</button>
         {show && 
             <div>
-                <h1>This was hidden Text.</h1>
-                <input type='text' onChange={(eve)=>{setText(eve.target.value)}} placeholder="type somethinng over here"/>
-                <h4>{text}</h4>
+                <h1>Enter User Information</h1>
+                <input type='text' onChange={(eve)=>{setName(eve.target.value)}} placeholder="name"/>
+                <input type='number' onChange={(eve)=>{setAge(eve.target.value)}} placeholder="age"/>
+                <input type='email' onChange={(eve)=>{setEmail(eve.target.value)}} placeholder="email"/>
+                <button onClick={()=>{setUserCard(!userCard)}}>Display </button>
+                <button onClick={reset}>New User</button>
+                {userCard && <User/>}
             </div>}
+        
+    </UserContext.Provider>
     </div>
   )
 }

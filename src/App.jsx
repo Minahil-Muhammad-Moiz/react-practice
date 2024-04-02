@@ -24,9 +24,6 @@ function App() {
         </Routes>
     </Router>
     <div className='Card'>
-      <User name='Mustafa' age={17} email= 'mus@gmail.com'/>
-    </div>
-    <div className='Card'>
       <Planets />
     </div>
     <div className='Card'>

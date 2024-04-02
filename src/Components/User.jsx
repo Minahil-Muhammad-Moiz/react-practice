@@ -1,12 +1,13 @@
-// import '../App.css'
+import { useContext } from "react"
+import { UserContext } from "./ShowHide"
 
-const User = (props) => {
+const User = () => {
+  const {name, age, email} = useContext(UserContext)
   return (
-    <div className="uCard">
-        <h1>{props.name}</h1>
-        <h1>{props.age}</h1>
-        <h1>{props.email}</h1>
-        <h1>{props.age >= 18 ? '': 'Underage'}</h1> 
+    <div>
+        <h1>{name}</h1>
+        <h1>{age}</h1>
+        <h1>{email}</h1>
     </div>
   )
 }
