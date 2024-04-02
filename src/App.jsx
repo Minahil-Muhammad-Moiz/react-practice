@@ -9,23 +9,23 @@ import Planets from './Components/Planets'
 function App() {
   return (
     <>
-    <div className='uCard'>
+    <div className='Card'>
       <User name='Minail' age={21} email='min@gmail.com'/>
       <User name='Mustafa' age={17} email= 'mus@gmail.com'/>
     </div>
-    <div className='uCard'>
+    <div className='Card'>
       <Planets />
     </div>
-    <div className='uCard'>
+    <div className='Card'>
       <Counter />
     </div>
-    <div className='uCard'>
+    <div className='Card'>
       <ShowHide/>
     </div>
-    <div className='uCard'>
+    <div className='Card'>
       <ToDoList />
     </div>
-    <div className='uCard'>
+    <div className='Card'>
       <Excuse/>
     </div>
     </>
