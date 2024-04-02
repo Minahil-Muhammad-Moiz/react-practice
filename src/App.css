@@ -26,3 +26,9 @@ button{
   border-radius: 0.5rem;
   padding: 0.3rem;
 }
+
+.links a{
+  color: aliceblue;
+  margin: auto 1rem ;
+}
+
