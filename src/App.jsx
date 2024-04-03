@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
-import Projects from './Pages/Projects'
+import Project from './Pages/Project'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
       <Routes>
           <Route path="Home" element={<Home />} />
           <Route path="About" element={<About />} />
-          <Route path="Projects" element={<Projects />} />
+          <Route path="Project" element={<Project />} />
         </Routes>
     </Router>
     <div className='Card'>
