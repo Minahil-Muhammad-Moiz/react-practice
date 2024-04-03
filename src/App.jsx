@@ -3,7 +3,6 @@ import Counter from './Components/Counter'
 import Excuse from './Components/Excuse'
 import ShowHide from './Components/ShowHide'
 import ToDoList from './Components/ToDoList'
-import User from './Components/User'
 import Planets from './Components/Planets'
 import Navbar from './Components/Navbar'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
@@ -11,8 +10,8 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Projects from './Pages/Projects'
 
-
 function App() {
+
   return (
     <>
     <Router>

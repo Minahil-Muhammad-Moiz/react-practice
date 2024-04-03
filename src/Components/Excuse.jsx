@@ -4,7 +4,6 @@ import { useState } from 'react';
 const Excuse = () => {
   const [eveExcuse, setExcuse] = useState('')
 
-  
   const fetchExcuse = (excuse)=>{
     Axios.get(`https://excuser-three.vercel.app/v1/excuse/${excuse}/`).then((res)=>{
       setExcuse(res.data[0].excuse)

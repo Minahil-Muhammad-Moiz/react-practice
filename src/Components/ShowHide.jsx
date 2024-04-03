@@ -10,7 +10,6 @@ const ShowHide = () => {
     const [age, setAge] = useState()
     const [email, setEmail] = useState('')
     const [userCard, setUserCard] = useState(false)
-
     const reset =()=>{
       setName('');
       setAge();
