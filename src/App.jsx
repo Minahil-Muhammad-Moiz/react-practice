@@ -9,6 +9,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Project from './Pages/Project'
+import Form from './Pages/Form'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="Home" element={<Home />} />
           <Route path="About" element={<About />} />
           <Route path="Project" element={<Project />} />
+          <Route path="Form" element={<Form />} />
         </Routes>
     </Router>
     <div className='Card'>

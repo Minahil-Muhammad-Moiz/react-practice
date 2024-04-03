@@ -12,9 +12,7 @@ const Planets = () => {
   return (
     <div>
         <h1>Gas Planets</h1>
-        {planetsLi.map((planet,key)=> planet.isGasPlanet && <h4>{planet.name}</h4>)}
-        <h1>Not a Gas Planet</h1>
-        {planetsLi.map((planet,key)=> !planet.isGasPlanet && <h4>{planet.name}</h4>)}
+        {planetsLi.map((planet,key)=> planet.isGasPlanet && <p>{planet.name}</p>)}
     </div>
   )
 }
