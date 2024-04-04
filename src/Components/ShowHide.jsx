@@ -1,15 +1,17 @@
 import { createContext } from "react"
 import { useState } from "react"
 import User from "./User"
+import useToggle from "../CustomHooks/useToggle"
 
 export const UserContext = createContext()
 
 const ShowHide = () => {
-    const [show, setShow] = useState(false)
+    const [isVisible, viewCard] = useToggle()
     const [name, setName] = useState('')
     const [age, setAge] = useState()
     const [email, setEmail] = useState('')
-    const [userCard, setUserCard] = useState(false)
+    const [userCard, setUserCard] = useToggle()
+
     const reset =()=>{
       setName('');
       setAge();
@@ -20,16 +22,16 @@ const ShowHide = () => {
   return (
     <div>
       <UserContext.Provider value={{ name, age, email }} >
-        <button onClick={()=>{setShow(!show)}}>
-          {show ? 'Hide' : 'Show'}
+        <button onClick={viewCard}>
+          {isVisible ? 'Hide' : 'Show'}
         </button>
-        {show && 
+        {isVisible && 
             <div>
                 <h1>Enter User Information</h1>
                 <input type='text' onChange={(eve)=>{setName(eve.target.value)}} placeholder="name"/>
                 <input type='number' onChange={(eve)=>{setAge(eve.target.value)}} placeholder="age"/>
                 <input type='email' onChange={(eve)=>{setEmail(eve.target.value)}} placeholder="email"/>
-                <button onClick={()=>{setUserCard(!userCard)}}>Display </button>
+                <button onClick={setUserCard}>Display </button>
                 <button onClick={reset}>New User</button>
                 {userCard && <User/>}
             </div>}
