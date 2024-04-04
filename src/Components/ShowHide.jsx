@@ -20,7 +20,9 @@ const ShowHide = () => {
   return (
     <div>
       <UserContext.Provider value={{ name, age, email }} >
-        <button onClick={()=>{setShow(!show)}}>Make User Card</button>
+        <button onClick={()=>{setShow(!show)}}>
+          {show ? 'Hide' : 'Show'}
+        </button>
         {show && 
             <div>
                 <h1>Enter User Information</h1>
